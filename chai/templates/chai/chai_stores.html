@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class='flex flex-col justify-start items-start gap-3 p-3 w-full'>
+    <h1 class='text-white font-extrabold text-center text-2xl'>Search store for Chai</h1>
+<form action="{% url 'chaiStores' %}" method="POST" class='flex flex-col justify-start items-start gap-4 p-8'>
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button type='submit' class='p-3 bg-white text-black text-xl font-semibold rounded-lg mt-4'>Search Store</button>
+</form>
+</div>
+
+{% if stores %}
+
+<h1>Stores availabel</h1>
+
+<ul>
+    {% for store in stores  %}
+    <li>{{store.name}}</li>
+    <li>{{store.location}}</li>
+    {% endfor %}
+</ul>
+
+
+{% endif %}
+
+{% endblock %}
