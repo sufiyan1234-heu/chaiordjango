@@ -6,11 +6,13 @@ Chai Detail Page
 
 {% block content %}
 
-<h1 class="text-white text-4xl text-center capitalize m-8">chai detail page</h1>
+<div class='flex flex-col justify-center items-center gap-3 p-6'>
+    <h1 class="text-white text-4xl text-center capitalize m-8">chai detail page</h1>
 
 {% for chai in chai %}
-<h3 class="text-white">{{chai.name}}</h3>
-<p>{{chai.description}}</p>
+<h1 class="text-white font-bold text-6xl">{{chai.name}}</h1>
+<p class='text-white text-2xl'>{{chai.description}}</p>
+</div>
 {% endfor %}
 
 
