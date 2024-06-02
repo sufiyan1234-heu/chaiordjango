@@ -92,7 +92,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-DATABASES['default'] = dj_database_url.parse('postgres://sufiyan:bnHRrcEGmGlFvBvwEv071BvIcKKljV95@dpg-cpe14rfsc6pc73980bjg-a.virginia-postgres.render.com/chai')
+#DATABASES['default'] = dj_database_url.parse('postgres://sufiyan:bnHRrcEGmGlFvBvwEv071BvIcKKljV95@dpg-cpe14rfsc6pc73980bjg-a.virginia-postgres.render.com/chai')
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -126,11 +126,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '/static'),
+    BASE_DIR/ 'static',
 ]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

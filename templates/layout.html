@@ -12,10 +12,12 @@
     {% comment %} <link rel="stylesheet" href="{% static 'style.css' %}"> {% endcomment %}
     {% tailwind_css %}
 </head>
-<body class="bg-slate-800">
+<body class="bg-zinc-500">
     <nav class="text-white text-4xl p-5">This is our navbar</nav>
-    {% block content %}
+    <div class='text-black'>
+        {% block content %}
     {% endblock %}
+    </div>
   
 </body>
 </html>
